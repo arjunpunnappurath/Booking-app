@@ -8,7 +8,9 @@ func main() {
 	const conferenceTickets = 50
 	var remainingTickets uint = 50
 	//arrays in go has fixed lengths
-	var bookings [50]string
+	//var bookings [50]string
+	//slices
+	bookings := []string{}
 	//var remainingTIckets uint = 50 //uint will make sure the variable does not take a negative value
 
 	//Print the types
@@ -36,20 +38,10 @@ func main() {
 
 	fmt.Printf("Thank you %v%v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 
-	//fmt.Println(remainingTickets)
-	//fmt.Println(&remainingTickets)
-
-	//userName = "TOM"
-	//userTickets = 2
-
 	remainingTickets = remainingTickets - userTickets
-	bookings[0] = firstName + " " + lastName
+	bookings = append(bookings, firstName+" "+lastName)
 
-	fmt.Printf("The whole array : %v\n", bookings)
-	fmt.Printf("The first value : %v\n", bookings[0])
-	fmt.Printf("Array type %T\n", bookings)
-	fmt.Printf("Array length %v\n", len(bookings))
+	fmt.Printf("These are all the bookings %v\n", bookings)
 
 	fmt.Printf("%v tickets are remaining for %v", remainingTickets, conferenceName)
-	//fmt.Printf("User %v booked %v tickets\n", firstName, userTickets)ß
 }
